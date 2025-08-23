@@ -15,7 +15,20 @@ pub fn fibonacci(n: u32) -> u32 {
     //
     // Hint: use a `Vec` to memoize the results you have already calculated
     // so that you don't have to recalculate them several times.
-    todo!()
+    match n {
+        0 => return 0,
+        1 => return 1,
+        _ => return fibonacci(n - 1) + fibonacci(n - 2)
+    }
+}
+
+pub fn recursive_fibonacci(n: u32) -> u32 {
+    // Recursive variant, most intuitive solution
+    match n {
+        0 => return 0,
+        1 => return 1,
+        _ => return recursive_fibonacci(n - 1) + recursive_fibonacci(n - 2)
+    }
 }
 
 #[cfg(test)]
